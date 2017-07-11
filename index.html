@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->     
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    
+    <link href="estilos.css" type="text/css" rel="stylesheet">
+      
+    <script>
+        
+      function reproducir (obj) {          
+        var a = $(obj).attr('audio');
+        var audio = new Audio('audios/'+a);
+        audio.play();
+      }
+        
+      function getRandomColor() {
+          var letters = '0123456789ABCDEF';
+          var color = '#';
+          for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+          }
+          return color;
+      }
+        
+      function cambiarBack () {
+          var color = getRandomColor();
+          $('body').css({'background': color})
+      }
+            
+      document.onkeydown = function (e) {
+        var keyCode = e.keyCode;
+        if (e.which !== 0) {            
+            cambiarBack();
+            var k = String.fromCharCode(e.which);
+            k = k.toLowerCase();            
+            //alert("Charcter was typed. It was: " + k +" and key is: "+e.which);            
+            switch (k) {
+                case 'q': $( ".tecla:eq(0)" ).click();
+                case 'w': $( ".tecla:eq(1)" ).click();
+                case 'e': $( ".tecla:eq(2)" ).click();
+                case 'r': $( ".tecla:eq(3)" ).click();
+                case 't': $( ".tecla:eq(4)" ).click();
+                case 'y': $( ".tecla:eq(5)" ).click();
+                case 'u': $( ".tecla:eq(6)" ).click();
+                case 'i': $( ".tecla:eq(7)" ).click();
+                case 'o': $( ".tecla:eq(8)" ).click();
+                case 'p': $( ".tecla:eq(9)" ).click();
+                case 'a': $( ".tecla:eq(10)" ).click();
+                case 's': $( ".tecla:eq(11)" ).click();
+                case 'd': $( ".tecla:eq(12)" ).click();
+                case 'f': $( ".tecla:eq(13)" ).click();
+                case 'g': $( ".tecla:eq(14)" ).click();
+                case 'h': $( ".tecla:eq(15)" ).click();
+                case 'j': $( ".tecla:eq(16)" ).click();
+                case 'k': $( ".tecla:eq(17)" ).click();
+                case 'l': $( ".tecla:eq(18)" ).click();
+                case 'z': $( ".tecla:eq(19)" ).click();
+                case 'x': $( ".tecla:eq(20)" ).click();
+                case 'c': $( ".tecla:eq(21)" ).click();
+                case 'v': $( ".tecla:eq(22)" ).click();
+                case 'b': $( ".tecla:eq(23)" ).click();
+                case 'n': $( ".tecla:eq(24)" ).click();
+                case 'm': $( ".tecla:eq(25)" ).click();                
+            }            
+        }
+      };
+    </script>
+    
+    <style>        
+        * {            
+            box-sizing:border-box; 
+        }
+                        
+        body { 
+            margin:0; background:#f5f5f5; 
+        }
+                
+        .set {
+              height:30.875em; width:800px;
+              margin:5em auto; padding:3em 0 0 3em; position:relative; 
+              border:1px solid #160801; border-radius:1em; 
+              background:-webkit-gradient(linear, right bottom, left top, color-stop(0%,rgba(0,0,0,0.9)), color-stop(100%,rgba(0,0,0,.9)));
+              box-shadow:0 0 50px rgba(0,0,0,0.9) inset, 0 1px rgba(212,152,125,0.4) inset,0 5px 15px rgba(0,0,0,0.5); 
+        }
+                
+    </style>  
+  </head>
+  <body>
+      
+    <!-- Begin page content -->
+    <div class="container">
+      <div class="mt-1">
+        <h1>Psico Piano Cat</h1>
+      </div>
+      <!--<p class="lead">saraza saraza saraza saraza saraza saraza saraza saraza saraza saraza </p>-->
+    </div>
+    
+    <footer class="footer">
+       <div class="container">
+            <ul class="set" id="piano">
+                <div class="row">
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="cat1.mp3">q</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="cat2.mp3">w</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="leon1.mp3">e</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="osopayaso1.mp3">r</div>              
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="cat1.mp3">r</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="cat2.mp3">t</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="leon1.mp3">y</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="osopayaso1.mp3">u</div>                
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="cat1.mp3">u</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="cat2.mp3">i</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="leon1.mp3">o</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="osopayaso1.mp3">p</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="cat1.mp3">a</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="cat2.mp3">s</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="leon1.mp3">d</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="osopayaso1.mp3">f</div>           
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="cat1.mp3">g</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="cat2.mp3">h</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="leon1.mp3">j</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="osopayaso1.mp3">k</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="cat1.mp3">l</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="cat2.mp3">ñ</div>
+                </div>
+                <div class="row">
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="leon1.mp3">z</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="osopayaso1.mp3">x</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="cat1.mp3">c</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="cat2.mp3">v</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="leon1.mp3">b</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="osopayaso1.mp3">n</div>
+                  <div class="col-md-1 tecla" onclick="reproducir(this)" audio="cat1.mp3">m</div>
+                </div>
+            </ul>    
+        </div>
+    </footer>
+  </body>
+</html>
